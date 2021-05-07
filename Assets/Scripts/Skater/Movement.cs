@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,83 +11,96 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D skaterRB;
     private Animator animator;
+    private DirectionState directionState;
     private MoveState moveState;
 
-    void Start()
+    private float jumpAnimationLength = 1.283f;
+    private string RideRight = "RideRight";
+    private string RideLeft = "RideLeft";
+    private string JumpRight = "JumpRight";
+    private string JumpLeft = "JumpLeft";
+
+    private void Start()
     {
         skaterRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         moveState = MoveState.Idle;
+        directionState = DirectionState.Right;
     }
+
     private void FixedUpdate()
     {
-        UpdateHorizontalMove();
-        PlayAnimation();
-        DetectStop();
+        Move();
     }
+
     private void Update()
     {
-        UpdateJumpMove();
+        Jump();
     }
-    void UpdateHorizontalMove()
+
+    private void Move()
     {
         if (Input.GetKey(KeyCode.D))
         {
-            moveState = MoveState.RideRight;
+            directionState = DirectionState.Right;
             if (skaterRB.velocity.x < maxSpeed)
-            {
                 skaterRB.AddForce(new Vector2(moveForce, 0f));
+
+            if (moveState != MoveState.Jump)
+            {
+                moveState = MoveState.Ride;
+                animator.Play(RideRight);
             }
         }
         if (Input.GetKey(KeyCode.A))
         {
-            moveState = MoveState.RideLeft;
+            directionState = DirectionState.Left;
             if (skaterRB.velocity.x > -maxSpeed)
-            {
                 skaterRB.AddForce(new Vector2(-moveForce, 0f));
+
+            if (moveState != MoveState.Jump)
+            {
+                moveState = MoveState.Ride;
+                animator.Play(RideLeft);
             }
         }
     }
-    void UpdateJumpMove()
+
+    private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && moveState != MoveState.Jump)
         {
             moveState = MoveState.Jump;
             skaterRB.AddForce(new Vector2(0f, jumpForce));
-        }
-    }
-    void PlayAnimation()
-    {
-        if (moveState == MoveState.Idle)
-        {
-            animator.Play("Idle");
-        }
-        else if (moveState == MoveState.RideRight)
-        {
-            animator.Play("RideRight");
-        }
-        else if (moveState == MoveState.RideLeft)
-        {
-            animator.Play("RideLeft");
-        }
-        else if (moveState == MoveState.Jump)
-        {
-            animator.Play("Jump");
-        }
-    }
-    void DetectStop()
-    {
-        if ((!Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A)) && (moveState != MoveState.Jump))
-        {
-            moveState = MoveState.Idle;
+
+            if (directionState == DirectionState.Right)
+            {
+                animator.Play(JumpRight);
+            }
+            else if (directionState == DirectionState.Left)
+            {
+                animator.Play(JumpLeft);
+            }
+
+            StartCoroutine(EndJump());
         }
     }
 
+    IEnumerator EndJump()
+    {
+        yield return new WaitForSeconds(jumpAnimationLength);
+        moveState = MoveState.Idle;
+    }
+
+    private enum DirectionState
+    {
+        Right,
+        Left
+    }
     private enum MoveState
     {
         Idle,
-        RideRight,
-        RideLeft, 
+        Ride,
         Jump
     }
 }
