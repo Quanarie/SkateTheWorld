@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 815b475a9c33cfe4a98fdbe6b173fdfb
+guid: 9f29096bc26398d4cae0f4431f3e8f16
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4564603903470132440
-    second: SkaterJump_0
+      213: -1160194291450311885
+    second: JumpRight_0
   - first:
-      213: -5024070965109599209
-    second: SkaterJump_1
+      213: 1085791020424961347
+    second: JumpRight_1
   - first:
-      213: -8525877304396059573
-    second: SkaterJump_2
+      213: -8625605829479663521
+    second: JumpRight_2
   - first:
-      213: -5661894539981336534
-    second: SkaterJump_3
+      213: -4037514572070455701
+    second: JumpRight_3
   - first:
-      213: 2502497556475252236
-    second: SkaterJump_4
+      213: -7213943608451530351
+    second: JumpRight_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
+    aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -118,10 +118,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SkaterJump_0
+      name: JumpRight_0
       rect:
         serializedVersion: 2
-        x: 26
+        x: 22
         y: 0
         width: 88
         height: 83
@@ -132,17 +132,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8232d412fe447a0c0800000000000000
-      internalID: -4564603903470132440
+      spriteID: 33b0bab507926efe0800000000000000
+      internalID: -1160194291450311885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkaterJump_1
+      name: JumpRight_1
       rect:
         serializedVersion: 2
-        x: 118
+        x: 113
         y: 0
         width: 88
         height: 83
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 714d94e631ae64ab0800000000000000
-      internalID: -5024070965109599209
+      spriteID: 34d1db82e21811f00800000000000000
+      internalID: 1085791020424961347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkaterJump_2
+      name: JumpRight_2
       rect:
         serializedVersion: 2
         x: 213
@@ -174,17 +174,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4c68e083cffda980800000000000000
-      internalID: -8525877304396059573
+      spriteID: f587351d231bb4880800000000000000
+      internalID: -8625605829479663521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkaterJump_3
+      name: JumpRight_3
       rect:
         serializedVersion: 2
-        x: 313
+        x: 312
         y: 0
         width: 88
         height: 83
@@ -195,17 +195,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2050b4f9e8ec61b0800000000000000
-      internalID: -5661894539981336534
+      spriteID: b66f64c63edd7f7c0800000000000000
+      internalID: -4037514572070455701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkaterJump_4
+      name: JumpRight_4
       rect:
         serializedVersion: 2
-        x: 408
+        x: 407
         y: 0
         width: 88
         height: 83
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0e8df0d448aab220800000000000000
-      internalID: 2502497556475252236
+      spriteID: 1910c8c528ce2eb90800000000000000
+      internalID: -7213943608451530351
       vertices: []
       indices: 
       edges: []
@@ -225,7 +225,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 75a8fa9079ab0fc418de0a1021065fbf
+    spriteID: 3150c127d84bec948b5437d026e7b134
     internalID: 0
     vertices: []
     indices: 
