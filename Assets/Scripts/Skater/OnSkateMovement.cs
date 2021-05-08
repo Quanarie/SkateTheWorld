@@ -1,9 +1,7 @@
-using System.Linq;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class OnSkateMovement : MonoBehaviour
 {
     [SerializeField] private float maxSpeed;
     [SerializeField] private float moveForce;
@@ -14,31 +12,32 @@ public class Movement : MonoBehaviour
     private DirectionState directionState;
     private MoveState moveState;
 
-    private float jumpAnimationLength = 1.283f;
-    private string RideRight = "RideRight";
-    private string RideLeft = "RideLeft";
-    private string JumpRight = "JumpRight";
-    private string JumpLeft = "JumpLeft";
+    private const float jumpAnimationLength = 1.283f;
+    private const string RideRight = "RideRight";
+    private const string RideLeft = "RideLeft";
+    private const string JumpRight = "JumpRight";
+    private const string JumpLeft = "JumpLeft";
 
     private void Start()
     {
         skaterRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
         moveState = MoveState.Idle;
         directionState = DirectionState.Right;
     }
 
     private void FixedUpdate()
     {
-        Move();
+        Ride();
     }
 
     private void Update()
     {
-        Jump();
+        Ollie();
     }
 
-    private void Move()
+    private void Ride()
     {
         if (Input.GetKey(KeyCode.D))
         {
@@ -66,7 +65,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void Jump()
+    private void Ollie()
     {
         if (Input.GetKeyDown(KeyCode.Space) && moveState != MoveState.Jump)
         {
