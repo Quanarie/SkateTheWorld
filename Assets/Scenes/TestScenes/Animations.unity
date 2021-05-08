@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 17251327}
   - component: {fileID: 17251326}
   - component: {fileID: 17251328}
+  - component: {fileID: 17251329}
   m_Layer: 0
   m_Name: Skater
   m_TagString: Untagged
@@ -352,7 +353,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 191e2614b3e022d4da10bfef13e6bf33, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -364,13 +365,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17251322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d54455361fe0a974d94489c208833749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
   moveForce: 5
+  jumpForce: 300
+--- !u!114 &17251329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17251322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fefdeaea80d1cd4593a04f7234bc8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 1
+  moveForce: 10
   jumpForce: 300
 --- !u!1 &232122680
 GameObject:
@@ -1450,7 +1466,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1826484652}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 191e2614b3e022d4da10bfef13e6bf33, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

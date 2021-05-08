@@ -14,7 +14,7 @@ public class OnSkateMovement : MonoBehaviour
 
     private const float jumpAnimationLength = 1.283f;
     private const string ride = "Ride";
-    private const string jump = "Jump";
+    private const string jump = "Ollie";
 
     private void Start()
     {
