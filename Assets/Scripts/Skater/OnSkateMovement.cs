@@ -13,10 +13,8 @@ public class OnSkateMovement : MonoBehaviour
     private MoveState moveState;
 
     private const float jumpAnimationLength = 1.283f;
-    private const string RideRight = "RideRight";
-    private const string RideLeft = "RideLeft";
-    private const string JumpRight = "JumpRight";
-    private const string JumpLeft = "JumpLeft";
+    private const string ride = "Ride";
+    private const string jump = "Jump";
 
     private void Start()
     {
@@ -41,26 +39,34 @@ public class OnSkateMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            directionState = DirectionState.Right;
             if (skaterRB.velocity.x < maxSpeed)
                 skaterRB.AddForce(new Vector2(moveForce, 0f));
 
             if (moveState != MoveState.Jump)
             {
                 moveState = MoveState.Ride;
-                animator.Play(RideRight);
+                if (directionState == DirectionState.Left)
+                {
+                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    directionState = DirectionState.Right;
+                }
+                animator.Play(ride);
             }
         }
         if (Input.GetKey(KeyCode.A))
         {
-            directionState = DirectionState.Left;
             if (skaterRB.velocity.x > -maxSpeed)
                 skaterRB.AddForce(new Vector2(-moveForce, 0f));
 
             if (moveState != MoveState.Jump)
             {
                 moveState = MoveState.Ride;
-                animator.Play(RideLeft);
+                if (directionState ==  DirectionState.Right)
+                {
+                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    directionState = DirectionState.Left;
+                }
+                animator.Play(ride);
             }
         }
     }
@@ -72,14 +78,7 @@ public class OnSkateMovement : MonoBehaviour
             moveState = MoveState.Jump;
             skaterRB.AddForce(new Vector2(0f, jumpForce));
 
-            if (directionState == DirectionState.Right)
-            {
-                animator.Play(JumpRight);
-            }
-            else if (directionState == DirectionState.Left)
-            {
-                animator.Play(JumpLeft);
-            }
+            animator.Play(jump);
 
             StartCoroutine(EndJump());
         }
