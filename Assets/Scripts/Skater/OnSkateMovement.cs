@@ -47,7 +47,7 @@ public class OnSkateMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            if (skaterRB.velocity.x < maxSpeed)
+                if (skaterRB.velocity.x < maxSpeed)
                 skaterRB.AddForce(new Vector2(moveForce, 0f));
 
             if (moveState != MoveState.Jump)
