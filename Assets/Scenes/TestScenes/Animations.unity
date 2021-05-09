@@ -218,8 +218,9 @@ GameObject:
   - component: {fileID: 17251323}
   - component: {fileID: 17251327}
   - component: {fileID: 17251326}
-  - component: {fileID: 17251328}
+  - component: {fileID: 17251330}
   - component: {fileID: 17251329}
+  - component: {fileID: 17251328}
   m_Layer: 0
   m_Name: Skater
   m_TagString: Untagged
@@ -286,7 +287,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d6f464c88237aa644b00713600f20a10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d708e76232e05c940a551fb5f62b0c38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -328,7 +329,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.68, y: 0.82}
+    oldSize: {x: 0.46, y: 0.8}
     newSize: {x: 0.68, y: 0.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -386,8 +387,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 1
-  moveForce: 10
-  jumpForce: 300
+  moveForce: 15
+  jumpForce: 200
+--- !u!114 &17251330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17251322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbed649410225443af2523356dc3bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &232122680
 GameObject:
   m_ObjectHideFlags: 0

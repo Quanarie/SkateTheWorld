@@ -13,7 +13,7 @@ public class RegularMovement : MonoBehaviour
     private DirectionState directionState;
     private MoveState moveState;
 
-    private const float jumpAnimationLength = 1.283f;
+    private const float jumpLength = 1f;
     private const string walk = "Walk";
     private const string jump = "Jump";
 
@@ -30,6 +30,11 @@ public class RegularMovement : MonoBehaviour
     {
         Walk();
         Jump();
+        Stop();
+
+        if (transform.localScale.x >= 0)
+            directionState = DirectionState.Right;
+        else directionState = DirectionState.Left;
     }
 
     private void Walk()
@@ -73,15 +78,23 @@ public class RegularMovement : MonoBehaviour
             moveState = MoveState.Jump;
             skaterRB.AddForce(new Vector2(0f, jumpForce));
 
-            //animator.Play(jump);
+            animator.Play(jump);
 
             StartCoroutine(EndJump());
         }
     }
 
+    private void Stop()
+    {
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+        {
+            skaterRB.velocity *= Vector2.up; 
+        }
+    }
+
     IEnumerator EndJump()
     {
-        yield return new WaitForSeconds(jumpAnimationLength);
+        yield return new WaitForSeconds(jumpLength);
         moveState = MoveState.Idle;
     }
 

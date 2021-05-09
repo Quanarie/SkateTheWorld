@@ -12,7 +12,7 @@ public class OnSkateMovement : MonoBehaviour
     private DirectionState directionState;
     private MoveState moveState;
 
-    private const float jumpAnimationLength = 1.283f;
+    private const float jumpLength = 1.283f;
     private const string ride = "Ride";
     private const string jump = "Ollie";
 
@@ -33,6 +33,10 @@ public class OnSkateMovement : MonoBehaviour
     private void Update()
     {
         Ollie();
+
+        if (transform.localScale.x >= 0)
+            directionState = DirectionState.Right;
+        else directionState = DirectionState.Left;
     }
 
     private void Ride()
@@ -86,7 +90,7 @@ public class OnSkateMovement : MonoBehaviour
 
     IEnumerator EndJump()
     {
-        yield return new WaitForSeconds(jumpAnimationLength);
+        yield return new WaitForSeconds(jumpLength);
         moveState = MoveState.Idle;
     }
 
