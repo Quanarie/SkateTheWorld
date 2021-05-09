@@ -127,9 +127,9 @@ TextureImporter:
       name: WalkRight_0
       rect:
         serializedVersion: 2
-        x: 20
+        x: 14
         y: 0
-        width: 41
+        width: 49
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -148,9 +148,9 @@ TextureImporter:
       name: WalkRight_1
       rect:
         serializedVersion: 2
-        x: 92
+        x: 90
         y: 0
-        width: 41
+        width: 49
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -171,7 +171,7 @@ TextureImporter:
         serializedVersion: 2
         x: 168
         y: 0
-        width: 41
+        width: 49
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -190,9 +190,9 @@ TextureImporter:
       name: WalkRight_3
       rect:
         serializedVersion: 2
-        x: 237
+        x: 233
         y: 0
-        width: 41
+        width: 49
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -211,9 +211,9 @@ TextureImporter:
       name: WalkRight_4
       rect:
         serializedVersion: 2
-        x: 306
+        x: 297
         y: 0
-        width: 41
+        width: 49
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -232,9 +232,9 @@ TextureImporter:
       name: WalkRight_5
       rect:
         serializedVersion: 2
-        x: 380
+        x: 377
         y: 0
-        width: 41
+        width: 49
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -253,9 +253,9 @@ TextureImporter:
       name: WalkRight_6
       rect:
         serializedVersion: 2
-        x: 446
+        x: 441
         y: 0
-        width: 41
+        width: 49
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

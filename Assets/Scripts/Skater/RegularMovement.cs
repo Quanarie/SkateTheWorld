@@ -13,7 +13,7 @@ public class RegularMovement : MonoBehaviour
     private DirectionState directionState;
     private MoveState moveState;
 
-    private const float jumpLength = 1f;
+    private float jumpLength;
     private const string walk = "Walk";
     private const string jump = "Jump";
 
@@ -24,6 +24,8 @@ public class RegularMovement : MonoBehaviour
 
         moveState = MoveState.Idle;
         directionState = DirectionState.Right;
+
+        jumpLength = 2 * jumpForce * 0.02f / 9.81f;
     }
 
     private void Update()
@@ -88,7 +90,11 @@ public class RegularMovement : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
         {
-            skaterRB.velocity *= Vector2.up; 
+            skaterRB.velocity *= Vector2.up;
+            if (moveState != MoveState.Jump)
+            {
+                animator.Play("Stay");
+            }
         }
     }
 

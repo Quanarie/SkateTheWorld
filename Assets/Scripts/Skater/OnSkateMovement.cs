@@ -12,7 +12,8 @@ public class OnSkateMovement : MonoBehaviour
     private DirectionState directionState;
     private MoveState moveState;
 
-    private const float jumpLength = 1.283f;
+    private float jumpLength;
+    private const string idle = "Idle";
     private const string ride = "Ride";
     private const string jump = "Ollie";
 
@@ -23,6 +24,8 @@ public class OnSkateMovement : MonoBehaviour
 
         moveState = MoveState.Idle;
         directionState = DirectionState.Right;
+
+        jumpLength = 2 * jumpForce * 0.02f / 9.81f;
     }
 
     private void FixedUpdate()
@@ -33,6 +36,7 @@ public class OnSkateMovement : MonoBehaviour
     private void Update()
     {
         Ollie();
+        Stop();
 
         if (transform.localScale.x >= 0)
             directionState = DirectionState.Right;
@@ -85,6 +89,17 @@ public class OnSkateMovement : MonoBehaviour
             animator.Play(jump);
 
             StartCoroutine(EndJump());
+        }
+    }
+
+    private void Stop()
+    {
+        if (moveState != MoveState.Jump)
+        {
+            if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+            {
+                animator.Play(idle);
+            }
         }
     }
 
