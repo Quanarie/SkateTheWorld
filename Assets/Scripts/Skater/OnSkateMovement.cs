@@ -12,7 +12,6 @@ public class OnSkateMovement : MonoBehaviour
     private DirectionState directionState;
     private MoveState moveState;
 
-    private float jumpLength;
     private const string idle = "Idle";
     private const string ride = "Ride";
     private const string jump = "Ollie";
@@ -24,8 +23,6 @@ public class OnSkateMovement : MonoBehaviour
 
         moveState = MoveState.Idle;
         directionState = DirectionState.Right;
-
-        jumpLength = 2 * jumpForce * 0.02f / 9.81f;
     }
 
     private void FixedUpdate()
@@ -87,8 +84,11 @@ public class OnSkateMovement : MonoBehaviour
             skaterRB.AddForce(new Vector2(0f, jumpForce));
 
             animator.Play(jump);
+        }
 
-            StartCoroutine(EndJump());
+        if (Physics2D.OverlapCircle(new Vector2(transform.position.x - 0.8f, transform.position.y - 0.8f), 0.01f) && skaterRB.velocity.y < 0)
+        {
+            moveState = MoveState.Idle;
         }
     }
 
@@ -101,12 +101,6 @@ public class OnSkateMovement : MonoBehaviour
                 animator.Play(idle);
             }
         }
-    }
-
-    IEnumerator EndJump()
-    {
-        yield return new WaitForSeconds(jumpLength);
-        moveState = MoveState.Idle;
     }
 
     private enum DirectionState

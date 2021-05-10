@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         float distFromPlayer = Mathf.Abs(transform.position.x - skater.position.x);
-        if (distFromPlayer < chasingDistance)
+        if (distFromPlayer < chasingDistance && distFromPlayer > GetComponent<EnemyAttack>().GetAttackDistance())
         {
             StartChasing();
         }
@@ -62,7 +62,6 @@ public class EnemyMovement : MonoBehaviour
     private void StopChasing()
     {
         enemyRB.velocity = new Vector2(0f, enemyRB.velocity.y);
-        animator.Play(stay);
     }
 
     private enum DirectionState

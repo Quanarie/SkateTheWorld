@@ -82,8 +82,11 @@ public class RegularMovement : MonoBehaviour
             skaterRB.AddForce(new Vector2(0f, jumpForce));
 
             animator.Play(jump);
+        }
 
-            StartCoroutine(EndJump());
+        if (Physics2D.OverlapCircle(new Vector2(transform.position.x - 0.8f, transform.position.y - 0.8f), 0.01f) && skaterRB.velocity.y < 0)
+        {
+            moveState = MoveState.Idle;
         }
     }
 
@@ -97,12 +100,6 @@ public class RegularMovement : MonoBehaviour
                 animator.Play(stay);
             }
         }
-    }
-
-    IEnumerator EndJump()
-    {
-        yield return new WaitForSeconds(jumpLength);
-        moveState = MoveState.Idle;
     }
 
     private enum DirectionState
