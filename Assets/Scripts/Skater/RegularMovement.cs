@@ -13,7 +13,6 @@ public class RegularMovement : MonoBehaviour
     private DirectionState directionState;
     private MoveState moveState;
 
-    private float jumpLength;
     private const string stay = "Stay";
     private const string walk = "Walk";
     private const string jump = "Jump";
@@ -25,8 +24,6 @@ public class RegularMovement : MonoBehaviour
 
         moveState = MoveState.Idle;
         directionState = DirectionState.Right;
-
-        jumpLength = 2 * jumpForce * 0.02f / 9.81f;
     }
 
     private void Update()

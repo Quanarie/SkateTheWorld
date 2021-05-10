@@ -19,7 +19,12 @@ public class TerrainGenerator : MonoBehaviour
         for (int x = 0; x < Width; x++)
         {
             var cellClone = Instantiate(cell, startPos);
-            if (x % 4 == 0) y += Random.Range(-1, 2);
+            if (x % 4 == 0)
+            {
+                if (y == 0) y += Random.Range(0, 2);
+                else if (y == Height) y += Random.Range(-1, 1);
+                else y += Random.Range(-1, 2);
+            }
             cellClone.transform.localPosition = new Vector3(x, y, 0);
         }
     }

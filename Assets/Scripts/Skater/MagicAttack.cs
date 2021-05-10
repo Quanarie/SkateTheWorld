@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MagicWandAttack : MonoBehaviour
+public class MagicAttack : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform shootPlace;
+    [SerializeField] private float mannaCost;
 
     [SerializeField] private float rechargeTime;
     private float timeBetweenShots;
@@ -14,8 +16,9 @@ public class MagicWandAttack : MonoBehaviour
     {
         if (timeBetweenShots<=0)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && GetComponentInParent<MannaController>().Manna - mannaCost > 0)
             {
+                GetComponentInParent<MannaController>().ReduceManna(mannaCost);
                 Instantiate(bullet, shootPlace.position, transform.rotation, shootPlace);
                 timeBetweenShots = rechargeTime;
             }
