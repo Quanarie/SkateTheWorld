@@ -14,6 +14,7 @@ public class RegularMovement : MonoBehaviour
     private MoveState moveState;
 
     private float jumpLength;
+    private const string stay = "Stay";
     private const string walk = "Walk";
     private const string jump = "Jump";
 
@@ -93,7 +94,7 @@ public class RegularMovement : MonoBehaviour
             skaterRB.velocity *= Vector2.up;
             if (moveState != MoveState.Jump)
             {
-                animator.Play("Stay");
+                animator.Play(stay);
             }
         }
     }
