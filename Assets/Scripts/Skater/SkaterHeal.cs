@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MagicAttack : MonoBehaviour
+public class SkaterHeal : MonoBehaviour
 {
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private Transform shootPlace;
+    [SerializeField] private int valueToHeal;
     [SerializeField] private float mannaCost;
     [SerializeField] private GameObject effect;
 
@@ -15,15 +13,14 @@ public class MagicAttack : MonoBehaviour
 
     private void Update()
     {
-        if (timeBetweenShots<=0)
+        if (timeBetweenShots <= 0)
         {
             if (Input.GetMouseButton(0) && GetComponentInParent<MannaController>().Manna - mannaCost > 0)
             {
                 GetComponentInParent<MannaController>().ReduceManna(mannaCost);
 
-                Instantiate(effect, shootPlace);
+                GetComponentInParent<SkaterHealth>().Heal(valueToHeal);
 
-                Instantiate(bullet, shootPlace.position, transform.rotation, shootPlace);
                 timeBetweenShots = rechargeTime;
             }
         }
@@ -31,6 +28,6 @@ public class MagicAttack : MonoBehaviour
         {
             timeBetweenShots -= Time.deltaTime;
         }
-        
+
     }
 }

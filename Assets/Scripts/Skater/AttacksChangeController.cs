@@ -6,13 +6,25 @@ using UnityEngine.UI;
 public class AttacksChangeController : MonoBehaviour
 {
     [SerializeField] private List<GameObject> attacks;
-    [SerializeField] private List<Image> spellBars;
+    [SerializeField] private List<Image> lightning;
+    [SerializeField] private List<Image> fireball;
+    [SerializeField] private List<Image> heal;
+    [SerializeField] private List<Image> meteorites;
 
+    private List<List<Image>> weaponsSprites;
     private int currentWeapon;
     private int openedWeapons;
 
     private void Start()
     {
+        weaponsSprites = new List<List<Image>>
+        {
+            lightning,
+            fireball,
+            heal,
+            meteorites
+        };
+
         currentWeapon = 0;
         openedWeapons = 1;
 
@@ -21,6 +33,8 @@ public class AttacksChangeController : MonoBehaviour
             if (i == 0) attacks[i].SetActive(true);
             else attacks[i].SetActive(false);
         }
+
+        lightning[2].enabled = true;
     }
 
     private void Update()
@@ -28,17 +42,21 @@ public class AttacksChangeController : MonoBehaviour
         if (GetComponent<SkaterScore>().Score == 1 && openedWeapons != 2)
         {
             openedWeapons++;
-            //spellBars[openedWeapons - 2].enabled = false;
-            spellBars[openedWeapons - 1].enabled = true;
+            fireball[0].enabled = false;
+            fireball[1].enabled = true;
         }
-        /*else if (GetComponent<SkaterScore>().Score == 5 && openedWeapons != 3)
+        if (GetComponent<SkaterScore>().Score == 2 && openedWeapons != 3)
         {
             openedWeapons++;
+            heal[0].enabled = false;
+            heal[1].enabled = true;
         }
-        else if (GetComponent<SkaterScore>().Score == 10 && openedWeapons != 4)
+        if (GetComponent<SkaterScore>().Score == 3 && openedWeapons != 4)
         {
             openedWeapons++;
-        }*/
+            meteorites[0].enabled = false;
+            meteorites[1].enabled = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -46,8 +64,16 @@ public class AttacksChangeController : MonoBehaviour
             else currentWeapon++;
             for (int i = 0; i < openedWeapons; i++)
             {
-                if (i == currentWeapon) attacks[i].SetActive(true);
-                else attacks[i].SetActive(false);
+                if (i == currentWeapon)
+                {
+                    attacks[i].SetActive(true);
+                    weaponsSprites[currentWeapon][2].enabled = true;
+                }
+                else
+                {
+                    attacks[i].SetActive(false);
+                    weaponsSprites[i][2].enabled = false;
+                }
             }
         }
     }
