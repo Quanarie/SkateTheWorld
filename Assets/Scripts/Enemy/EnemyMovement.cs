@@ -59,6 +59,11 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    public void SetSkater(Transform skateBoarder)
+    {
+        skater = skateBoarder;
+    }
+
     private void StopChasing()
     {
         enemyRB.velocity = new Vector2(0f, enemyRB.velocity.y);

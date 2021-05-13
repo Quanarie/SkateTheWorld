@@ -43,5 +43,17 @@ public class EnemyAttack : MonoBehaviour
         animator.Play(attack);
     }
 
+    public void SetSkater(GameObject skateBoarder)
+    {
+        skater = skateBoarder;
+    }
+
+   /* public int Damage
+    {
+        get { return damage; }
+        set { damage = value; }
+    }*/
+
+
     public float GetAttackDistance() { return attackDistance; }
 }

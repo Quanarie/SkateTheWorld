@@ -19,4 +19,15 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void SetSkater(GameObject skateBoarder)
+    {
+        skater = skateBoarder;
+    }
+
+    /*public int Health
+    {
+        get { return health; }
+        set { health = value; }
+    }*/
 }
