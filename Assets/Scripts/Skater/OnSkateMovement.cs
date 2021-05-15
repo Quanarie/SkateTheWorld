@@ -44,7 +44,7 @@ public class OnSkateMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-                if (skaterRB.velocity.x < maxSpeed)
+            if (skaterRB.velocity.x < maxSpeed)
                 skaterRB.AddForce(new Vector2(moveForce, 0f));
 
             if (moveState != MoveState.Jump)
@@ -58,22 +58,26 @@ public class OnSkateMovement : MonoBehaviour
                 animator.Play(ride);
             }
         }
-        if (Input.GetKey(KeyCode.A))
+        if (transform.position.x + 1600 * Camera.main.orthographicSize / 900 - 0.8f > Camera.main.transform.position.x)
         {
-            if (skaterRB.velocity.x > -maxSpeed)
-                skaterRB.AddForce(new Vector2(-moveForce, 0f));
-
-            if (moveState != MoveState.Jump)
+            if (Input.GetKey(KeyCode.A))
             {
-                moveState = MoveState.Ride;
-                if (directionState ==  DirectionState.Right)
+                if (skaterRB.velocity.x > -maxSpeed)
+                    skaterRB.AddForce(new Vector2(-moveForce, 0f));
+
+                if (moveState != MoveState.Jump)
                 {
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                    directionState = DirectionState.Left;
+                    moveState = MoveState.Ride;
+                    if (directionState == DirectionState.Right)
+                    {
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                        directionState = DirectionState.Left;
+                    }
+                    animator.Play(ride);
                 }
-                animator.Play(ride);
             }
         }
+        else skaterRB.velocity = new Vector3(0, skaterRB.velocity.y, 0);
     }
 
     private void Ollie()
