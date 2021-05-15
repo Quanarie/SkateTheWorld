@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca3800793fef5c4c8713e4687f29a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   damageTakenEffect: {fileID: 7000152104779678913, guid: c73c96403a69f8b4bbce3c625ee7dfe8, type: 3}
   healEffect: {fileID: 7000152104779678913, guid: f54b35d057fdf5e4fa82b7b6db195b27, type: 3}
   hearts:
@@ -775,7 +775,7 @@ MonoBehaviour:
   skater: {fileID: 17251325}
   background: {fileID: 632779880}
   cell: {fileID: 6258780860533167705, guid: 8a7426309ee28d5468cdae2aee3f1e7a, type: 3}
-  Height: 7
+  Height: 6
 --- !u!4 &261833714
 Transform:
   m_ObjectHideFlags: 0
@@ -2729,6 +2729,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 3444205182218133510, guid: 3e649c2937474b54db8cddbc6f40fa62, type: 3}
   - {fileID: 3395845713440975221, guid: c1f4a40325d868b4c9c5e43c48921f4c, type: 3}
+  - {fileID: 6910595208028423670, guid: 0b2c575ce64edb842b4fbd8fa6df2e88, type: 3}
   minTimeBetweenSpawn: 3
   maxTimeBetweenSpawn: 6
   increaseHealth: 0
