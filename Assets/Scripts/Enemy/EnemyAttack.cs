@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float attackDistance;
     [SerializeField] private float rechargeTime;
+    [SerializeField] private GameObject hitSound;
     private float timeBetweenShots;
 
     private Animator animator;
@@ -38,6 +39,7 @@ public class EnemyAttack : MonoBehaviour
     }
     private void Attack()
     {
+        Instantiate(hitSound, transform);
         skater.GetComponent<SkaterHealth>().TakeDamage(damage);
         enemyRB.velocity = new Vector2(0f, enemyRB.velocity.y);
         animator.Play(attack);

@@ -57,7 +57,6 @@ public class SkaterHealth : MonoBehaviour
     {
         if (value > 0)
         {
-            Instantiate(healEffect, transform);
             health = Mathf.Min(maxHealth, health + value);
         }
     }

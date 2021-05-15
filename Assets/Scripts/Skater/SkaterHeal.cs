@@ -7,6 +7,7 @@ public class SkaterHeal : MonoBehaviour
     [SerializeField] private int valueToHeal;
     [SerializeField] private float mannaCost;
     [SerializeField] private GameObject effect;
+    [SerializeField] private GameObject sound;
 
     [SerializeField] private float rechargeTime;
     private float timeBetweenShots;
@@ -20,6 +21,9 @@ public class SkaterHeal : MonoBehaviour
                 GetComponentInParent<MannaController>().ReduceManna(mannaCost);
 
                 GetComponentInParent<SkaterHealth>().Heal(valueToHeal);
+
+                Instantiate(effect, transform);
+                Instantiate(sound, transform);
 
                 timeBetweenShots = rechargeTime;
             }

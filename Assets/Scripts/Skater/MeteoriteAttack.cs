@@ -9,6 +9,7 @@ public class MeteoriteAttack : MonoBehaviour
     [SerializeField] private float mannaCost;
     [SerializeField] private float rechargeTime;
     [SerializeField] private float quantity;
+    [SerializeField] private GameObject sound;
 
     private float timeBetweenShots;
 
@@ -27,6 +28,7 @@ public class MeteoriteAttack : MonoBehaviour
                     rockPos.z = shootPlace.transform.position.z;
 
                     Instantiate(rocks[Random.Range(0, 5)], rockPos, transform.rotation, shootPlace);
+                    Instantiate(sound, transform);
                 }
                 timeBetweenShots = rechargeTime;
             }

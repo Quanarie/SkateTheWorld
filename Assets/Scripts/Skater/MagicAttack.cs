@@ -9,6 +9,7 @@ public class MagicAttack : MonoBehaviour
     [SerializeField] private Transform shootPlace;
     [SerializeField] private float mannaCost;
     [SerializeField] private GameObject effect;
+    [SerializeField] private GameObject sound;
 
     [SerializeField] private float rechargeTime;
     private float timeBetweenShots;
@@ -22,6 +23,7 @@ public class MagicAttack : MonoBehaviour
                 GetComponentInParent<MannaController>().ReduceManna(mannaCost);
 
                 Instantiate(effect, shootPlace);
+                Instantiate(sound, shootPlace);
 
                 Instantiate(bullet, shootPlace.position, transform.rotation, shootPlace);
                 timeBetweenShots = rechargeTime;

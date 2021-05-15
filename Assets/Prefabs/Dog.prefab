@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skater: {fileID: 0}
   health: 1
+  deathSound: {fileID: 1666430202711552172, guid: b71e0ed9fe5677241b6bd8291ac5b281, type: 3}
 --- !u!114 &3395845713440975229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +174,7 @@ MonoBehaviour:
   damage: 1
   attackDistance: 1.2
   rechargeTime: 1.5
+  hitSound: {fileID: 3080710154411791596, guid: e14f0769920d8164abe5ad574aa525f9, type: 3}
 --- !u!70 &4579697876237712520
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

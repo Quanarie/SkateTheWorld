@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca3800793fef5c4c8713e4687f29a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10
   damageTakenEffect: {fileID: 7000152104779678913, guid: c73c96403a69f8b4bbce3c625ee7dfe8, type: 3}
   healEffect: {fileID: 7000152104779678913, guid: f54b35d057fdf5e4fa82b7b6db195b27, type: 3}
   hearts:
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manna: {fileID: 727619849}
-  speed: 1
+  speed: 10
   value: 50
 --- !u!114 &17251333
 MonoBehaviour:
@@ -2049,7 +2049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToHeal: 5
   mannaCost: 10
-  effect: {fileID: 0}
+  effect: {fileID: 7000152104779678913, guid: f54b35d057fdf5e4fa82b7b6db195b27, type: 3}
+  sound: {fileID: 6721571138336552973, guid: 87ba573b572fa0946a73ea88a646ccb6, type: 3}
   rechargeTime: 5
 --- !u!1 &1206982639
 GameObject:
@@ -3028,6 +3029,7 @@ MonoBehaviour:
   mannaCost: 20
   rechargeTime: 15
   quantity: 10
+  sound: {fileID: 5629236769320261936, guid: b82e8e57e4dfe1a4d8d76cc84978d2d3, type: 3}
 --- !u!1 &2079216950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,6 +3078,7 @@ MonoBehaviour:
   shootPlace: {fileID: 1046309681}
   mannaCost: 10
   effect: {fileID: 7865250342413699615, guid: 8d6af5008b1b75044b87057a1f50f078, type: 3}
+  sound: {fileID: 7476284337818299064, guid: e54fc43409b53b14a912a237f31e3fbe, type: 3}
   rechargeTime: 3
 --- !u!1 &2139806007
 GameObject:
@@ -3125,4 +3128,5 @@ MonoBehaviour:
   shootPlace: {fileID: 1864716071}
   mannaCost: 2
   effect: {fileID: 7865250342413699615, guid: 8d6af5008b1b75044b87057a1f50f078, type: 3}
+  sound: {fileID: 1064843061178601699, guid: 6661c273f72c3d84ea8da3c9cb776f39, type: 3}
   rechargeTime: 0.5

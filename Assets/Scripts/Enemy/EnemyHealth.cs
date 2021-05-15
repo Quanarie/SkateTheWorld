@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private GameObject skater;
     [SerializeField] private int health;
+    [SerializeField] private GameObject deathSound;
 
     public void TakeDamage(int damage)
     {
@@ -16,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             skater.GetComponent<SkaterScore>().AddScore(1);
+            Instantiate(deathSound, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
