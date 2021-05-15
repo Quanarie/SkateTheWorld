@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
+    [SerializeField] private Transform skater;
     [SerializeField] private GameObject cell;
-    [SerializeField] private Transform startPos;
-    [SerializeField] private int Height, Width;
+    [SerializeField] private int Height;
+
+    private float previousPositionX = 0;
+    private float previousPositionY = 0;
 
     private void Start()
+    {
+        previousPositionY = transform.position.y;
+    }
+
+    private void Update()
     {
         Generate();
     }
 
     private void Generate()
     {
-        int y = 0;
-        for (int x = 0; x < Width; x++)
+        if (skater.position.x + 20 > previousPositionX)
         {
-            var cellClone = Instantiate(cell, startPos);
-            if (x % 4 == 0)
-            {
-                if (y == 0) y += Random.Range(0, 2);
-                else if (y == Height) y += Random.Range(-1, 1);
-                else y += Random.Range(-1, 2);
-            }
-            cellClone.transform.localPosition = new Vector3(x, y, 0);
+            float yOffSet = Random.Range(-1, 2);
+            if (previousPositionY + yOffSet < Height + transform.position.y && previousPositionY + yOffSet > transform.position.y && previousPositionX % 3 == 0)
+                previousPositionY += yOffSet;
+            var cellClone = Instantiate(cell, new Vector3(previousPositionX, previousPositionY, 0), transform.rotation, transform);
+            previousPositionX++;
         }
     }
 }
