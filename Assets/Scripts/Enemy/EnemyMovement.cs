@@ -33,6 +33,8 @@ public class EnemyMovement : MonoBehaviour
         {
             StopChasing();
         }
+
+        if (transform.position.y < -100) Destroy(gameObject);
     }
     
     private void StartChasing()
