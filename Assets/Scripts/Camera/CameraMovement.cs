@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour
     {
         Vector3 pos = Vector2.Lerp(transform.position, skater.position, 0.1f);
         pos.z = transform.position.z;
+        pos.y = transform.position.y;
         transform.position = pos;
     }
 }
