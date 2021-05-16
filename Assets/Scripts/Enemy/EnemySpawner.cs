@@ -20,8 +20,8 @@ public class EnemySpawner : MonoBehaviour
     {
         timeFromStart += Time.deltaTime;
         if (complexity! <= 1) complexity += Time.deltaTime * 0.01f;
-        if (minTimeBetweenSpawn >= 1) minTimeBetweenSpawn -= Time.deltaTime * 0.01f;
-        if (maxTimeBetweenSpawn >= 4) maxTimeBetweenSpawn -= Time.deltaTime * 0.01f;
+        if (minTimeBetweenSpawn >= 2) minTimeBetweenSpawn -= Time.deltaTime * 0.01f;
+        if (maxTimeBetweenSpawn >= 5) maxTimeBetweenSpawn -= Time.deltaTime * 0.01f;
         increaseForHealth += Time.deltaTime * 0.01f;
 
         if (timeFromPreviousSpawn > timeBetweenSpawn)

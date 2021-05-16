@@ -2048,8 +2048,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601f8b61fccdb1641b9bd4227dd08f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToHeal: 5
-  mannaCost: 10
+  valueToHeal: 4
+  mannaCost: 20
   effect: {fileID: 7000152104779678913, guid: f54b35d057fdf5e4fa82b7b6db195b27, type: 3}
   rechargeTime: 2
 --- !u!82 &1203120731
@@ -3123,9 +3123,9 @@ MonoBehaviour:
   - {fileID: 6488749904781567830, guid: 364853f3c9f8b8a4c89a74e9823dcead, type: 3}
   - {fileID: 3876209674415892776, guid: ac3040e7f017acf4b90ca47b4afb5626, type: 3}
   shootPlace: {fileID: 1745654106}
-  mannaCost: 20
+  mannaCost: 25
   rechargeTime: 5
-  quantity: 10
+  quantity: 12
 --- !u!82 &2076885731
 AudioSource:
   m_ObjectHideFlags: 0
