@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
         timeFromStart += Time.deltaTime;
         if (timeFromStart > 10)
         {
-            complexity = 0.4f;
+            complexity = 0.8f;
         }
         if (timeFromStart > 20)
         {

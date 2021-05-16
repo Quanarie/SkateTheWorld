@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca3800793fef5c4c8713e4687f29a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   damageTakenEffect: {fileID: 7000152104779678913, guid: c73c96403a69f8b4bbce3c625ee7dfe8, type: 3}
   healEffect: {fileID: 7000152104779678913, guid: f54b35d057fdf5e4fa82b7b6db195b27, type: 3}
   hearts:
@@ -2827,8 +2827,10 @@ MonoBehaviour:
   - {fileID: 3444205182218133510, guid: 3e649c2937474b54db8cddbc6f40fa62, type: 3}
   - {fileID: 3395845713440975221, guid: c1f4a40325d868b4c9c5e43c48921f4c, type: 3}
   - {fileID: 6910595208028423670, guid: 0b2c575ce64edb842b4fbd8fa6df2e88, type: 3}
-  minTimeBetweenSpawn: 3
-  maxTimeBetweenSpawn: 6
+  - {fileID: 3735904235856558290, guid: 85b48372746fd7b4784088ee6a8cc150, type: 3}
+  - {fileID: 4744363619046252018, guid: cc224851049931545baeb3146d8641d9, type: 3}
+  minTimeBetweenSpawn: 1
+  maxTimeBetweenSpawn: 2
   increaseHealth: 0
   increaseDamage: 0
 --- !u!1 &1745654105
@@ -3428,7 +3430,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1c1ad5e6cddcfaa45b2a2ca70c6732b8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: da0d58056c2560f499c58fd7362d36b8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
