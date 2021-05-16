@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skater: {fileID: 0}
-  speed: 250
+  speed: 300
   chasingDistance: 30
 --- !u!114 &3395845713440975228
 MonoBehaviour:

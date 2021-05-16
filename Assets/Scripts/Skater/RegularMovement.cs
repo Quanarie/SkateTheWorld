@@ -35,6 +35,8 @@ public class RegularMovement : MonoBehaviour
         if (transform.localScale.x >= 0)
             directionState = DirectionState.Right;
         else directionState = DirectionState.Left;
+
+        if (skaterRB.velocity.x > maxSpeed) skaterRB.velocity = new Vector3(maxSpeed, skaterRB.velocity.y, 0);
     }
 
     private void Walk()
