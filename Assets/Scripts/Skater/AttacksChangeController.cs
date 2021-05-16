@@ -39,19 +39,19 @@ public class AttacksChangeController : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponent<SkaterScore>().Score == 1 && openedWeapons != 2)
+        if (GetComponent<SkaterScore>().Score == 3 && openedWeapons != 2)
         {
             openedWeapons++;
             fireball[0].enabled = false;
             fireball[1].enabled = true;
         }
-        if (GetComponent<SkaterScore>().Score == 2 && openedWeapons != 3)
+        if (GetComponent<SkaterScore>().Score == 10 && openedWeapons != 3)
         {
             openedWeapons++;
             heal[0].enabled = false;
             heal[1].enabled = true;
         }
-        if (GetComponent<SkaterScore>().Score == 3 && openedWeapons != 4)
+        if (GetComponent<SkaterScore>().Score == 20 && openedWeapons != 4)
         {
             openedWeapons++;
             meteorites[0].enabled = false;

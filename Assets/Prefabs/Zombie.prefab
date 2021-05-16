@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skater: {fileID: 0}
   health: 1
+  deathEffect: {fileID: 7000152104779678913, guid: 94d85c1026ee3174cae522a3faf55138, type: 3}
   deathSound: {fileID: 1183861358807002768, guid: 77a629f77bcaf544e9ea6e654464bd34, type: 3}
 --- !u!114 &3444205182218133518
 MonoBehaviour:
@@ -189,5 +190,5 @@ MonoBehaviour:
   skater: {fileID: 0}
   damage: 1
   attackDistance: 1.2
-  rechargeTime: 1
+  rechargeTime: 2
   hitSound: {fileID: 6611823447941179658, guid: 8e12130bb6dddcb48bf731e0bf1d2af2, type: 3}

@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca3800793fef5c4c8713e4687f29a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10
   damageTakenEffect: {fileID: 7000152104779678913, guid: c73c96403a69f8b4bbce3c625ee7dfe8, type: 3}
   healEffect: {fileID: 7000152104779678913, guid: f54b35d057fdf5e4fa82b7b6db195b27, type: 3}
   hearts:
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manna: {fileID: 727619849}
-  speed: 10
+  speed: 1
   value: 50
 --- !u!114 &17251333
 MonoBehaviour:
@@ -2051,7 +2051,7 @@ MonoBehaviour:
   valueToHeal: 5
   mannaCost: 10
   effect: {fileID: 7000152104779678913, guid: f54b35d057fdf5e4fa82b7b6db195b27, type: 3}
-  rechargeTime: 5
+  rechargeTime: 2
 --- !u!82 &1203120731
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2827,12 +2827,10 @@ MonoBehaviour:
   - {fileID: 3444205182218133510, guid: 3e649c2937474b54db8cddbc6f40fa62, type: 3}
   - {fileID: 3395845713440975221, guid: c1f4a40325d868b4c9c5e43c48921f4c, type: 3}
   - {fileID: 6910595208028423670, guid: 0b2c575ce64edb842b4fbd8fa6df2e88, type: 3}
-  - {fileID: 3735904235856558290, guid: 85b48372746fd7b4784088ee6a8cc150, type: 3}
-  - {fileID: 4744363619046252018, guid: cc224851049931545baeb3146d8641d9, type: 3}
-  minTimeBetweenSpawn: 1
-  maxTimeBetweenSpawn: 2
-  increaseHealth: 0
-  increaseDamage: 0
+  - {fileID: 8920050078345246765, guid: 85b48372746fd7b4784088ee6a8cc150, type: 3}
+  - {fileID: 7291134862258962163, guid: cc224851049931545baeb3146d8641d9, type: 3}
+  minTimeBetweenSpawn: 4
+  maxTimeBetweenSpawn: 8
 --- !u!1 &1745654105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,7 +3124,7 @@ MonoBehaviour:
   - {fileID: 3876209674415892776, guid: ac3040e7f017acf4b90ca47b4afb5626, type: 3}
   shootPlace: {fileID: 1745654106}
   mannaCost: 20
-  rechargeTime: 15
+  rechargeTime: 5
   quantity: 10
 --- !u!82 &2076885731
 AudioSource:
@@ -3273,7 +3271,7 @@ MonoBehaviour:
   shootPlace: {fileID: 1046309681}
   mannaCost: 10
   effect: {fileID: 7865250342413699615, guid: 8d6af5008b1b75044b87057a1f50f078, type: 3}
-  rechargeTime: 3
+  rechargeTime: 1
 --- !u!82 &2079216953
 AudioSource:
   m_ObjectHideFlags: 0

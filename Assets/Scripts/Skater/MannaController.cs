@@ -19,9 +19,15 @@ public class MannaController : MonoBehaviour
 
     private void Update()
     {
+        manna.maxValue += Time.deltaTime * 0.25f;
+        speed += Time.deltaTime * 0.003f;
         if (skateMoveScirpt.enabled)
         {
             manna.value += Time.deltaTime * speed;
+        }
+        else
+        {
+            manna.value += Time.deltaTime * speed * speed;
         }
     }
 

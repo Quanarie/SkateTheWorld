@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skater: {fileID: 0}
-  speed: 150
+  speed: 250
   chasingDistance: 30
 --- !u!114 &3395845713440975228
 MonoBehaviour:
@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skater: {fileID: 0}
   health: 1
+  deathEffect: {fileID: 7000152104779678913, guid: 94d85c1026ee3174cae522a3faf55138, type: 3}
   deathSound: {fileID: 1666430202711552172, guid: b71e0ed9fe5677241b6bd8291ac5b281, type: 3}
 --- !u!114 &3395845713440975229
 MonoBehaviour:

@@ -25,7 +25,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (timeBetweenShots <= 0)
         {
-            float distFromPlayer = Mathf.Abs(transform.position.x - skater.transform.position.x);
+            float distFromPlayer = Vector3.Distance(transform.position, skater.transform.position);
             if (distFromPlayer < attackDistance)
             {
                 Attack();

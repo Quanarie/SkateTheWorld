@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skater: {fileID: 0}
-  health: 1
+  health: 2
+  deathEffect: {fileID: 7000152104779678913, guid: 94d85c1026ee3174cae522a3faf55138, type: 3}
   deathSound: {fileID: 4297734193255224545, guid: 8516d9a1fbaf9aa47a9829a5de0b8a80, type: 3}
 --- !u!114 &6910595208028423678
 MonoBehaviour:
