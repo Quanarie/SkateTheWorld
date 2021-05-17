@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SkaterScore : MonoBehaviour
 {
-    [SerializeField] Text scoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
     private int score;
 
     public void AddScore(int points)
@@ -13,7 +14,7 @@ public class SkaterScore : MonoBehaviour
         if (points > 0)
         {
             score += points;
-            scoreText.text = "Score: " + score;
+            scoreText.text = "SCORE: " + score;
         }
     }
 

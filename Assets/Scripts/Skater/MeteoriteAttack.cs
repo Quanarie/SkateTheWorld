@@ -26,7 +26,7 @@ public class MeteoriteAttack : MonoBehaviour
                     rockPos.y = shootPlace.transform.position.y;
                     rockPos.z = shootPlace.transform.position.z;
 
-                    Instantiate(rocks[Random.Range(0, 5)], rockPos, transform.rotation, shootPlace);
+                    Instantiate(rocks[Random.Range(0, 5)], rockPos, transform.rotation);
                     GetComponent<AudioSource>().Play();
                 }
                 timeBetweenShots = rechargeTime;

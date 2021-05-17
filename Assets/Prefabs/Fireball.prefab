@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3355714172007979289}
   - component: {fileID: -8425271932046911799}
   - component: {fileID: 235799559636387151}
+  - component: {fileID: -4287121733078859564}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 73837c1b20b55f946a38d9878347dd05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,6 +101,7 @@ MonoBehaviour:
   lifeTime: 2
   distance: 2
   damage: 5
+  skater: {fileID: 0}
 --- !u!61 &235799559636387151
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,3 +128,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.54, y: 0.32}
   m_EdgeRadius: 0
+--- !u!50 &-4287121733078859564
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156521360690707983}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

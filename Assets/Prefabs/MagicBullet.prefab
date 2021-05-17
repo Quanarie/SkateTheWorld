@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5022570348716688473}
   - component: {fileID: -3624305352946034766}
   - component: {fileID: 3687247933676881754}
+  - component: {fileID: 7822078789768278303}
   m_Layer: 0
   m_Name: MagicBullet
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3e0d951d96a6c6d4fbb6b1e73ce84f43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,6 +101,7 @@ MonoBehaviour:
   lifeTime: 1
   distance: 1
   damage: 1
+  skater: {fileID: 0}
 --- !u!61 &3687247933676881754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,3 +128,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.1}
   m_EdgeRadius: 0
+--- !u!50 &7822078789768278303
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022570348716688472}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

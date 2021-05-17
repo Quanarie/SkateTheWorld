@@ -23,6 +23,7 @@ public class MeteoriteRock : MonoBehaviour
         {
             collider.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
-        Destroy(gameObject);
+        else if (!collider.TryGetComponent(out MeteoriteRock _))
+            Destroy(gameObject);
     }
 }
