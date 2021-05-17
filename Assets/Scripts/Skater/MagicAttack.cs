@@ -24,7 +24,9 @@ public class MagicAttack : MonoBehaviour
                 Instantiate(effect, shootPlace);
                 GetComponent<AudioSource>().Play();
 
-                Instantiate(bullet, shootPlace.position, transform.rotation, shootPlace);
+                var bullClone = Instantiate(bullet, shootPlace.position, transform.rotation);
+                bullClone.GetComponent<MagicBullet>().SetSkater(transform);
+
                 timeBetweenShots = rechargeTime;
             }
         }
