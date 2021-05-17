@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class SkaterHealth : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class SkaterHealth : MonoBehaviour
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite halfFullHeart;
     [SerializeField] private Sprite emptyHeart;
+    [SerializeField] private TextMeshProUGUI gameOver;
 
     private int maxHealth;
 
@@ -49,8 +51,18 @@ public class SkaterHealth : MonoBehaviour
         }
         if (health <= 0)
         {
-            SceneManager.LoadScene(0);
+            gameOver.text = "YOU DIED";
+            GetComponent<OnSkateMovement>().enabled = false;
+            GetComponent<RegularMovement>().enabled = false;
+            GetComponent<TransportTypeController>().enabled = false;
+            StartCoroutine(StartScene());
         }
+    }
+
+     IEnumerator StartScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
     }
 
     public void Heal(int value)
