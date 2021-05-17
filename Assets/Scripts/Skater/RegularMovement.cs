@@ -7,6 +7,8 @@ public class RegularMovement : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float moveForce;
     [SerializeField] private float jumpForce;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask ground;
 
     private Rigidbody2D skaterRB;
     private Animator animator;
@@ -35,6 +37,8 @@ public class RegularMovement : MonoBehaviour
         if (transform.localScale.x >= 0)
             directionState = DirectionState.Right;
         else directionState = DirectionState.Left;
+
+        if (skaterRB.velocity.x > maxSpeed) skaterRB.velocity = new Vector3(maxSpeed, skaterRB.velocity.y, 0);
     }
 
     private void Walk()
@@ -81,7 +85,7 @@ public class RegularMovement : MonoBehaviour
             animator.Play(jump);
         }
 
-        if (Physics2D.OverlapCircle(new Vector2(transform.position.x - 0.8f, transform.position.y - 0.8f), 0.01f) && skaterRB.velocity.y < 0)
+        if (Physics2D.OverlapCircle(groundCheck.position, .05f, ground) && skaterRB.velocity.y < 0)
         {
             moveState = MoveState.Idle;
         }
